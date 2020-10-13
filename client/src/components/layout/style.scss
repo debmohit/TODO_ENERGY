@@ -19,6 +19,13 @@ header {
       display: inherit;
       li {
         margin-left: 1rem;
+        &.welcome {
+          color: #fff;
+          display: flex;
+          img {
+            margin: 0 0.75rem 0 0;
+          }
+        }
       }
     }
   }

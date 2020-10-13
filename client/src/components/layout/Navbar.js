@@ -23,6 +23,7 @@ const Navbar = (props) => {
 function signedInLinks(props) {
   return (
     <ul className="right">
+      <li className="welcome"> <img width="22" height="22" src="https://www.flaticon.com/svg/static/icons/svg/145/145845.svg"/>Welcome </li>  
       <li> <NavLink onClick={ props.logout }  to='/'  > Logout </NavLink> </li>
     </ul>
   )

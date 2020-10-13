@@ -40,3 +40,7 @@ select {
 [type="radio"].with-gap:checked + span:after {
   border: 2px solid #0146ad;
 }
+
+.input-field .red-txt {
+  color: red !important;
+}

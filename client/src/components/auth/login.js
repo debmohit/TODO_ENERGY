@@ -24,15 +24,15 @@ const Login = (props) => {
     <div className="container">
         <form onSubmit={handleSubmit} className="white">
           <h5 className="grye-text"> Sign In </h5> 
-          <div className="input-filed">
+          <div className="input-field">
             <label htmlFor="email"> Email/Phone </label>
             <input type="text" id="email" name="email" value={creds.email} onChange={handleChange} />
           </div>
-          <div className="input-filed">
+          <div className="input-field">
             <label htmlFor="password"> Password </label>
             <input type="password" id="password" name="password" value={creds.password} onChange={handleChange} />
           </div>
-          <div className="input-filed">
+          <div className="input-field">
             <button className="btn"> Login </button>
           </div>
         </form>        

@@ -1,12 +1,18 @@
 form {
   &.white {
     max-width: 500px;
-    margin: 5rem auto 0;
+    margin: 5rem auto;
     h5 {
       margin: 0 0 1.5rem;
     }
-    .btn {
-      margin: 0.75rem 0 0;
+    .input-field {
+      margin: 0;
+      input {
+        margin-bottom: 0;
+      }
+      .btn {
+        margin: 1.5rem 0 0;
+      }
     }
   }
 }

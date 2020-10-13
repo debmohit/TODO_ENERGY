@@ -21,11 +21,18 @@ exports.handleResponse  = (res, statusCode, message, data=null) => {
       case 201:
         return res.status(statusCode).json({ success: true, message, data })
         break
+
+      case 400:
+        return res.status(statusCode).json({ success: false, message, data })
   
       case 404:
         return res.status(statusCode).json({ success: false, message, data })
+
         break
-  
+      case 401:
+        return res.status(statusCode).json({ success: false, message, data })
+        break
+
       default:
         return res.status(404).json({ success: false, message: 'No response found'})
     }

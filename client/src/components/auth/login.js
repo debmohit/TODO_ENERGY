@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { loginAction } from './../../store/actions/auth.action'
 
+import "./style.scss";
 
 const Login = (props) => {
 
@@ -22,7 +23,7 @@ const Login = (props) => {
   return (
     <div className="container">
         <form onSubmit={handleSubmit} className="white">
-          <h5 className="grye-text"> SignIn </h5> 
+          <h5 className="grye-text"> Sign In </h5> 
           <div className="input-filed">
             <label htmlFor="email"> Email/Phone </label>
             <input type="text" id="email" name="email" value={creds.email} onChange={handleChange} />
@@ -32,10 +33,9 @@ const Login = (props) => {
             <input type="password" id="password" name="password" value={creds.password} onChange={handleChange} />
           </div>
           <div className="input-filed">
-            <button className="btn pink lighten-1 z-depth-0"> Login </button>
+            <button className="btn"> Login </button>
           </div>
-        </form>
-        
+        </form>        
       </div>
   )
 

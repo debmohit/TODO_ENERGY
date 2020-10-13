@@ -19,8 +19,8 @@ const VIEWS = {
 
 const RenderBarChart = ({data}) => (
     <BarChart
-        width={500}
-        height={300}
+        width={1000}
+        height={500}
         data={data}
         margin={{
           top: 5, right: 30, left: 40, bottom: 5,
@@ -56,66 +56,68 @@ const BarCharts = ({selectedSubMenu}) => {
 
    return (
     <div className="section project-details">
-
         <h4> {selectedSubMenu} {startDate} { endDate}</h4>
 
-        <div className="row">
-            <div className="col s2">
-            <label>
-                <input name="charges" type="radio" checked={enType=='charges'} onChange={() => setEnType('charges')} />
-                <span>Energy Charges</span>
-            </label>
-            </div>
-            <div className="col s2">
-            <label>
-                <input name="consumption" type="radio" checked={enType=='consumption'} onChange={() => setEnType('consumption')} />
-                <span>Energy Consumption</span>
-            </label>
-            </div>
-        </div>
-
-        <div className="row">
-                <div className="input-field col s3">
-                    {
-                        view == VIEWS.MONTHLY ?
-                        <select onChange={(e) => setNoofMonth(e.target.value)}>
-                            <option value={6}> Last 6 month </option>
-                            <option value={3}> Last 3 months</option>
-                        </select> :
-                        <>
-                            <input type= "date" className="datepicker" onChange={(e) => setStartDate(e.target.value)} />
-                            <input type= "date" className="datepicker" onChange={(e) => setEndDate(e.target.value)} />
-                            {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-                            <DatePicker selected={endDate} onChange={date => setEndDate(date)} /> */}
-                        </>
-
-
-
-                    }
-
-                </div>
-
-            <div className="input-field col s3 offset-s2">
-                <button className={`waves-effect waves-light btn ${view !== VIEWS.MONTHLY ? 'white' : ''}`} onClick={() => setView(VIEWS.MONTHLY)}> Monthly </button>
-                <button className={`waves-effect waves-light btn ${view !== VIEWS.DAILY ? 'white' : ''}`} onClick={() => setView(VIEWS.DAILY)}> Daily </button>
-
-            </div>
-
-            <div className="input-field col s2 offset-s2">
-                <div class="switch">
-                    <label> Temprature
-                        <input type="checkbox" />
-                        <span class="lever"></span>
+        <div className="graph-area">
+            <div className="row">
+                <div className="col energy-option">
+                    <label>
+                        <input name="charges" type="radio" checked={enType=='charges'} onChange={() => setEnType('charges')} />
+                        <span>Energy Charges</span>
+                    </label>
+                    <label>
+                        <input name="consumption" type="radio" checked={enType=='consumption'} onChange={() => setEnType('consumption')} />
+                        <span>Energy Consumption</span>
                     </label>
                 </div>
             </div>
-        </div>
 
-        <div  className="row">
-            {/* <div className="col-s3 offset-s3"></div> */}
-            <div className="col-s6 offset-s3">
-                <RenderBarChart data={data} />
+            <h5>Time Period</h5>
+
+            <div className="row time-period">
+                <div className="col s4">
+                    <div className="view-option-1">
+                        {
+                            view == VIEWS.MONTHLY ?
+                            <select onChange={(e) => setNoofMonth(e.target.value)}>
+                                <option value={6}> Last 6 month </option>
+                                <option value={3}> Last 3 months</option>
+                            </select> :
+                            <>
+                                <input type= "date" className="datepicker" onChange={(e) => setStartDate(e.target.value)} />
+                                <input type= "date" className="datepicker" onChange={(e) => setEndDate(e.target.value)} />
+                                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+                                <DatePicker selected={endDate} onChange={date => setEndDate(date)} /> */}
+                            </>
+                        }
+                    </div>
+                </div>
+
+                <div className="col s4">
+                    <div className="view-option-2">
+                        <button className={`waves-effect waves-light btn month ${view !== VIEWS.MONTHLY ? 'white' : ''}`} onClick={() => setView(VIEWS.MONTHLY)}> Monthly </button>
+                        <button className={`waves-effect waves-light btn daily ${view !== VIEWS.DAILY ? 'white' : ''}`} onClick={() => setView(VIEWS.DAILY)}> Daily </button>
+                    </div>
+                </div>
+
+                <div className="col s4">
+                    <div class="switch">
+                        <label> Temprature
+                            <input type="checkbox" />
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+
             </div>
+
+            <div  className="row">
+                {/* <div className="col-s3 offset-s3"></div> */}
+                <div className="col s12">
+                    <RenderBarChart data={data} />
+                </div>
+            </div>
+            
         </div>
         
     </div>

@@ -12,12 +12,14 @@ const submenus = [
 
 const SubMenu = ({selectedSubMenu, updateSubMenu}) => {
     return (
-        <nav className="nav-wrapper grey darken-3">
-            <ul className="m3">
-               {
-                   submenus.map(menu => <li className={selectedSubMenu === menu.name ? 'active-menu': ''} onClick={() => updateSubMenu(menu.name)}> <a>{menu.name } </a> </li>)
-               }
-            </ul>
+        <nav className="nav-wrapper">
+            <div className="container">
+                <ul className="m3">
+                {
+                    submenus.map(menu => <li className={selectedSubMenu === menu.name ? 'active-menu': ''} onClick={() => updateSubMenu(menu.name)}> <a>{menu.name } </a> </li>)
+                }
+                </ul>
+            </div>
         </nav>
     )
 }

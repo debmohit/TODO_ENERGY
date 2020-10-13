@@ -1,0 +1,77 @@
+.dashboard {
+  .project-details {
+    h4 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 1rem 0 1rem;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .graph-area {
+      background: #fff;
+      box-shadow: inset 0px 0px 2px 0 rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      .energy-option {
+        padding-left: 0;
+        label {
+          margin-right: 1.5rem;
+        }
+      }
+      .time-period {
+        margin: 0 -0.75rem 2rem;
+      }
+      .view-option-1 {
+        display: flex;
+        input,
+        select {
+          height: 2.4rem;
+        }
+        select {
+          max-width: 250px;
+        }
+        input {
+          margin-bottom: 0;
+          &:nth-child(1) {
+            margin-right: 1.5rem;
+          }
+        }
+      }
+      .view-option-2 {
+        display: flex;
+        justify-content: center;
+        .btn {
+          box-shadow: inset 0px 0px 2px 0 rgba(0, 0, 0, 0.4);
+          &.month {
+            border-radius: 4px 0 0 4px;
+          }
+          &.daily {
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+      .switch {
+        display: flex;
+        justify-content: flex-end;
+        label {
+          color: #494949;
+          font-weight: 500;
+          line-height: 36px;
+          font-size: 14px;
+          input[type="checkbox"] {
+            &:checked + .lever {
+              background-color: rgba(5, 77, 185, 0.3);
+              &:after {
+                background-color: #0146ad;
+              }
+            }
+          }
+        }
+      }
+      .recharts-wrapper {
+        margin: 0 auto;
+      }
+    }
+  }
+}

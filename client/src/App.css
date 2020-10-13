@@ -1,6 +1,5 @@
-
 html {
-  background-color: #504848
+  background-color: #f1f1f1;
 }
 
 form {
@@ -8,10 +7,10 @@ form {
   margin-top: 60px;
 }
 
-form button, form h5 {
+form button,
+form h5 {
   margin: 20px;
 }
-
 
 select {
   display: block;
@@ -22,7 +21,22 @@ select {
   color: #000;
 }
 
-.active-menu {
-  border-bottom: 3px solid blue;
-  font-size: 30px;
+.btn {
+  border-radius: 4px;
+  background-color: #0146ad;
+}
+.btn:hover {
+  background-color: #0146ad;
+}
+.btn:focus {
+  background-color: #0146ad;
+}
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: #0146ad;
+}
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #0146ad;
 }

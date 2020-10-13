@@ -3,19 +3,20 @@ import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SubMenu from './SubMenu'
 
+import "./style.scss";
+
 const Navbar = (props) => {
 
   return (
-    <>
-      <nav className="nav-wrapper grey darken-3">
+    <header>
         <div className="container">
-          <Link to='/' className='brand-logo'> PoC App </Link>
-          {props.user ? signedInLinks(props) : signedOutLinks()}
-        
+          <div className="header-top">
+              <Link to='/' className='brand-logo'> PoC App </Link>
+              {props.user ? signedInLinks(props) : signedOutLinks()}        
+          </div>
         </div>
-      </nav>
-      { props.user ? <SubMenu />: '' }
-    </>
+        { props.user ? <SubMenu />: '' }
+    </header>
   )
 }
 
@@ -30,7 +31,7 @@ function signedInLinks(props) {
 function signedOutLinks() {
   return (
     <ul className="right">
-      <li> <NavLink to="/signup"> SignUp </NavLink> </li>
+      <li> <NavLink to="/signup"> Sign Up </NavLink> </li>
       <li> <NavLink to="/login"> Login </NavLink> </li>
     </ul>
   )

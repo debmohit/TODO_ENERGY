@@ -5,6 +5,7 @@ import Todos from './../todos/Todos';
 import BarCharts from '../stats/MonthlyStats'
 import NotificationBar from '../common/Notification'
 
+import "./style.scss";
 
 const Dashbaord = (props) => {
 

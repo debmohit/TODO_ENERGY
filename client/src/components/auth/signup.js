@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signupAction } from './../../store/actions/auth.action'
 
-
+import "./style.scss";
 /**
  * This component will use state
  */
@@ -40,7 +40,7 @@ const Signup = (props) => {
   return (
     <div className="container">
       <form className="white">
-        <h5 className="grye-text"> SignUp </h5>
+        <h5 className="grye-text"> Sign Up </h5>
         <div className="input-field">
           <label htmlFor="name"> Name </label>
           <input type="text" id="name" name='name' value={state.name} onChange={handleChange} />
@@ -58,7 +58,7 @@ const Signup = (props) => {
           <input type="password" id="password" name='password' value={state.password} onChange={handleChange} />
         </div>
         <div className="input-field">
-          <button type="button" className="btn pink lighten-1 z-depth-0" onClick={handleSumbit}> Signup </button>
+          <button type="button" className="btn" onClick={handleSumbit}> Signup </button>
         </div>
         
       </form>

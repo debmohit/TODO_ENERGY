@@ -7,7 +7,6 @@ export const signupAction = (newUser) => {
     try {
       let url = '/signup'
       let resp = await handleRequest('POST', url, newUser)
-      console.log("=========", {resp});
       if(!resp || !resp.success) dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg: resp.error || 'Error in signup'}})
       else  {
         dispatch({type: 'SHOW_NOTFICATION', notification: {isError: false, msg: 'Signup successful'}})
@@ -15,7 +14,8 @@ export const signupAction = (newUser) => {
       }
      
     } catch(error) {
-      dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg: error.message || 'Error in signup'}})
+      let msg = error.response.data.message || 'Something went wrong'
+      dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg }})
     }
 
   }
@@ -26,8 +26,6 @@ export const loginAction = (creds) => {
     try {
       let url = '/login'
       let resp = await handleRequest('POST', url, creds)
-      console.log("=========", {resp});
-      
       if(!resp || !resp.success) {
         dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg: resp.error || 'Error in login'}})
       }
@@ -37,7 +35,8 @@ export const loginAction = (creds) => {
       localStorage.setItem('user', JSON.stringify(resp.data.user))
       dispatch({type: 'SET_USER', user: resp.data.user})
     } catch(error) {
-      dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg: error.message || 'Error in signup'}})
+      let msg = error.response.data.message || 'Something went wrong'
+      dispatch({type: 'SHOW_NOTFICATION', notification: {isError: true, msg}})
     }
 
   }

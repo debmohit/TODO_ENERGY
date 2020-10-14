@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_ENDPOINT = 'http://localhost:5000/api'
+const API_ENDPOINT = 'http://13.127.104.169:5032/api'
 
 const handleRequest = async(methodType, url, data, config) => {
   url = API_ENDPOINT+url

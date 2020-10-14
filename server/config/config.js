@@ -1,5 +1,5 @@
 module.exports = {
-    port: 5000,
+    port: 5032,
     mongoUrl: 'mongodb://localhost:27017/todo-app',
 
     jwtSecret: 'hello world',

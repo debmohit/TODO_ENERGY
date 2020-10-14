@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     return handleResponse(res, 400, 'Missing params')
   }
 
-  let user = await UserModel.findOne({$or: [{email: username}, { phone: username}], password}).select({ password: -1, crtd: -1 })
+  let user = await UserModel.findOne({$or: [{email: username}, { phone: username}], password}).select({ password: 0, crtd: 0 })
   console.log('user', {user})
   if(!user) {
     return handleResponse(res, 401, 'Invalid credentials')

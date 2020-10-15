@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import DatePicker from "react-datepicker";
+import ReactSpeedometer from "react-d3-speedometer"
 
 
 import {
@@ -40,9 +41,17 @@ const RenderBarChart = ({data}) => (
 )
 
 const RenderPieChart = ({data}) => (
-    <PieChart width={400} height={400}>
-    <   Pie dataKey="value" startAngle={180} endAngle={0} data={data} cx={200} cy={200} outerRadius={80} fill="#8884d8" label />
-    </PieChart>
+    <ReactSpeedometer
+        value={333}
+        segments={5}
+        segmentColors={[
+            "#bf616a",
+            "#d08770",
+            "#ebcb8b",
+            "#a3be8c",
+            "#b48ead",
+        ]}
+    />
 )
 
 
@@ -120,15 +129,13 @@ const BarCharts = ({selectedSubMenu}) => {
             </div>
 
             <div  className="row">
-                {/* <div className="col-s3 offset-s3"></div> */}
-                <div className="col s12">
-                    {
-                        enType=='consumption' && view == VIEWS.MONTHLY ?
-                        <RenderPieChart data={data} /> :
-                        <RenderBarChart data={data} />
-                        
-                    }
-                </div>
+                
+                {
+                    enType=='consumption' && view == VIEWS.MONTHLY ?
+                    <div className="col s12 offset-s4"> <RenderPieChart data={data} /> </div> :
+                    <div className="col s12"> <RenderBarChart data={data} /> </div>
+                    
+                }
             </div>
             
         </div>

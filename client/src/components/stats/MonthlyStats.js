@@ -129,13 +129,14 @@ const BarCharts = ({selectedSubMenu}) => {
             </div>
 
             <div  className="row">
+                <div className="col s12"> <RenderBarChart data={data} /> </div>
                 
-                {
+                {/* {
                     enType=='consumption' && view == VIEWS.MONTHLY ?
                     <div className="col s12 offset-s4"> <RenderPieChart data={data} /> </div> :
                     <div className="col s12"> <RenderBarChart data={data} /> </div>
                     
-                }
+                } */}
             </div>
             
         </div>

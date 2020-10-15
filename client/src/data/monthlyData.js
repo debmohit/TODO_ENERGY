@@ -24,37 +24,37 @@ module.exports = {
         },
     ],
 
-    consumptionData: [
-        { name: 'Nov 2019/20', value: 400 }, 
-        { name: 'Oct 2019/20', value: 300 },
-        { name: 'Sept 2019/20', value: 300 }, 
-        { name: 'Aug 2019/20', value: 200 },
-        { name: 'July 2019/20', value: 278 }, 
-        { name: 'June 2019/20', value: 189 },
-        { name: 'May 2019/20', value: 151 },
-      ],
-
     // consumptionData: [
-    //     {
-    //         name: 'Nov 2019/20', prev: 40, current: 24, amt: 24,
-    //     },
-    //     {
-    //         name: 'Oct 2019/20', prev: 30, current: 13.98, amt: 22.10,
-    //     },
-    //     {
-    //         name: 'Sept 2019/20', prev: 50.00, current: 12.00, amt: 2290,
-    //     },
-    //     {
-    //         name: 'Aug 2019/20', prev: 27.80, current: 39.08, amt: 2000,
-    //     },
-    //     {
-    //         name: 'July 2019/20', prev: 18.90, current: 48.00, amt: 2181,
-    //     },
-    //     {
-    //         name: 'June 2019/20', prev: 23.90, current: 38.00, amt: 2500,
-    //     },
-    //     {
-    //         name: 'May 2019/20', prev: 34.90, current: 43.00, amt: 2100,
-    //     },
-    // ]
+    //     { name: 'Nov 2019/20', value: 400 }, 
+    //     { name: 'Oct 2019/20', value: 300 },
+    //     { name: 'Sept 2019/20', value: 300 }, 
+    //     { name: 'Aug 2019/20', value: 200 },
+    //     { name: 'July 2019/20', value: 278 }, 
+    //     { name: 'June 2019/20', value: 189 },
+    //     { name: 'May 2019/20', value: 151 },
+    //   ],
+
+    consumptionData: [
+        {
+            name: 'Nov 2019/20', prev: 40, current: 24, amt: 24,
+        },
+        {
+            name: 'Oct 2019/20', prev: 30, current: 13.98, amt: 22.10,
+        },
+        {
+            name: 'Sept 2019/20', prev: 50.00, current: 12.00, amt: 2290,
+        },
+        {
+            name: 'Aug 2019/20', prev: 27.80, current: 39.08, amt: 2000,
+        },
+        {
+            name: 'July 2019/20', prev: 18.90, current: 48.00, amt: 2181,
+        },
+        {
+            name: 'June 2019/20', prev: 23.90, current: 38.00, amt: 2500,
+        },
+        {
+            name: 'May 2019/20', prev: 34.90, current: 43.00, amt: 2100,
+        },
+    ]
 }

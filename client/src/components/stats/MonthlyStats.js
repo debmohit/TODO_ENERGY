@@ -7,6 +7,10 @@ import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
+import {
+    PieChart, Pie, Sector,
+  } from 'recharts';
+
 import { getMonthlyStats, getDailyStats } from '../../services/mockAPI'
 
 const VIEWS = {
@@ -33,6 +37,12 @@ const RenderBarChart = ({data}) => (
         <Bar dataKey="current" fill="#8884d8" />
         <Bar dataKey="prev" fill="#82ca9d" />
       </BarChart>
+)
+
+const RenderPieChart = ({data}) => (
+    <PieChart width={400} height={400}>
+    <   Pie dataKey="value" startAngle={180} endAngle={0} data={data} cx={200} cy={200} outerRadius={80} fill="#8884d8" label />
+    </PieChart>
 )
 
 
@@ -63,11 +73,11 @@ const BarCharts = ({selectedSubMenu}) => {
                 <div className="col energy-option">
                     <label>
                         <input name="charges" type="radio" checked={enType=='charges'} onChange={() => setEnType('charges')} />
-                        <span>Energy Charges</span>
+                        <span> Charges</span>
                     </label>
                     <label>
                         <input name="consumption" type="radio" checked={enType=='consumption'} onChange={() => setEnType('consumption')} />
-                        <span>Energy Consumption</span>
+                        <span> Consumption</span>
                     </label>
                 </div>
             </div>
@@ -86,8 +96,6 @@ const BarCharts = ({selectedSubMenu}) => {
                             <>
                                 <input type= "date" className="datepicker" onChange={(e) => setStartDate(e.target.value)} />
                                 <input type= "date" className="datepicker" onChange={(e) => setEndDate(e.target.value)} />
-                                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-                                <DatePicker selected={endDate} onChange={date => setEndDate(date)} /> */}
                             </>
                         }
                     </div>
@@ -100,21 +108,26 @@ const BarCharts = ({selectedSubMenu}) => {
                     </div>
                 </div>
 
-                <div className="col s4">
+                {/* <div className="col s4">
                     <div class="switch">
                         <label> Temprature
                             <input type="checkbox" />
                             <span class="lever"></span>
                         </label>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
             <div  className="row">
                 {/* <div className="col-s3 offset-s3"></div> */}
                 <div className="col s12">
-                    <RenderBarChart data={data} />
+                    {
+                        enType=='consumption' && view == VIEWS.MONTHLY ?
+                        <RenderPieChart data={data} /> :
+                        <RenderBarChart data={data} />
+                        
+                    }
                 </div>
             </div>
             
